@@ -12,3 +12,11 @@ class Node
     data <=> new_data.data
   end
 end
+
+
+# node = Node.new(2)
+# node.left = Node.new(15)
+# node.left.right = 100
+# node.right = 7
+
+# p node
