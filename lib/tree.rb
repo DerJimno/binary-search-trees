@@ -4,13 +4,13 @@ class Tree
   attr_accessor :root, :array
 
   def initialize(array)
-    @array = array
+    @array = array.sort.uniq
   end
 
-  def build_tree(array, starting = 0, ending = array.sort.uniq.length - 1)
+  def build_tree(array, starting = 0, ending = array.length - 1)
     return if starting > ending
     mid = (starting + ending) / 2
-    node = Node.new(array.sort.uniq[mid])
+    node = Node.new(array[mid])
     
     node.left = build_tree(array, starting, mid - 1)
     node.right = build_tree(array, mid + 1, ending)
